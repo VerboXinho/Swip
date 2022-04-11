@@ -7,6 +7,7 @@ public class LevelScript : MonoBehaviour
 {
     private int currentLevel;
     private Rigidbody2D winRb;
+    public GameObject winScreen;
     private void Start()
     {
         winRb = GetComponent<Rigidbody2D>();
@@ -28,13 +29,16 @@ public class LevelScript : MonoBehaviour
             if (collision.gameObject.CompareTag("Player"))
             {
                 PassLevel();
-                StartCoroutine(LoadNextLevel());
+                WinScreen();
             }
         }
     // Do zmiany przy finale!!! 
-    IEnumerator LoadNextLevel()
+    public void WinScreen()
     {
-        yield return new WaitForSeconds(1);
+        winScreen.gameObject.SetActive(true);
+    }
+    public void GoToNextLevel()
+    {
         SceneManager.LoadScene(currentLevel + 1);
     }
 }
