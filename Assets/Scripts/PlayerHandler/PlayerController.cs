@@ -10,29 +10,39 @@ public class PlayerController : MonoBehaviour
     public GameObject ball;
     public Rigidbody2D rb;
     public LineRenderer lr;
+    private int currentLevel;
     Vector3 clampedForce;
     Vector3 dragStartPos;
     Touch touch;
+    [SerializeField] bool isMoving = false;
 
+    private void Start()
+    {
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
+    }
     private void Update()
     {
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Began)
+            if (!isMoving)
             {
-                DragStart();
-            }
+                if (touch.phase == TouchPhase.Began)
+                {
+                    DragStart();
+                }
 
-            if (touch.phase == TouchPhase.Moved)
-            {
-                Dragging();
-            }
+                if (touch.phase == TouchPhase.Moved)
+                {
+                    Dragging();
+                }
 
-            if (touch.phase == TouchPhase.Ended)
-            {
-                DragRelease();
+
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    DragRelease();
+                }
             }
         }
     }
@@ -62,9 +72,22 @@ public class PlayerController : MonoBehaviour
         clampedForce = Vector3.ClampMagnitude(force, maxDrag) * power;
 
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
+        isMoving = true;
     }
+    // Nazwaæ potem GoToMenu
     public void ResetGame()
     {
         SceneManager.LoadScene(0);
+    }
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(currentLevel);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bounds"))
+        {
+            SceneManager.LoadScene(currentLevel);
+        }
     }
 }

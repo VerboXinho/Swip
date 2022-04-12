@@ -30,6 +30,7 @@ public class LevelScript : MonoBehaviour
             {
                 PassLevel();
                 WinScreen();
+                Destroy(collision.gameObject);
             }
         }
     // Do zmiany przy finale!!! 
@@ -41,4 +42,5 @@ public class LevelScript : MonoBehaviour
     {
         SceneManager.LoadScene(currentLevel + 1);
     }
+
 }
