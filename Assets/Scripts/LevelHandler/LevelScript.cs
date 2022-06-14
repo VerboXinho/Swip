@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelScript : MonoBehaviour
 {
+    public bool IsWinScreen = false;
     private int currentLevel;
     private Rigidbody2D winRb;
     public GameObject winScreen;
@@ -28,11 +29,18 @@ public class LevelScript : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
+                IsWinScreen = true;
                 PassLevel();
                 WinScreen();
                 Destroy(collision.gameObject);
-            }
+
         }
+            if (collision.gameObject.CompareTag("tPlayer"))
+            {
+                SceneManager.LoadScene(2);
+                Destroy(collision.gameObject);
+            }
+    }
     // Do zmiany przy finale!!! 
     public void WinScreen()
     {

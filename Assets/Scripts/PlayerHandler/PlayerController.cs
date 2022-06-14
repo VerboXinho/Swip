@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject tBox;
     public float power = 10f;
     public float maxDrag = 5f;
     public GameObject ball;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        tBox.SetActive(false);
         currentLevel = SceneManager.GetActiveScene().buildIndex;
     }
     private void Update()
@@ -84,11 +86,5 @@ public class PlayerController : MonoBehaviour
     {
         SceneManager.LoadScene(currentLevel);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bounds"))
-        {
-            SceneManager.LoadScene(currentLevel);
-        }
-    }
+
 }
