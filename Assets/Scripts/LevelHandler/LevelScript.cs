@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelScript : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class LevelScript : MonoBehaviour
     private int currentLevel;
     private Rigidbody2D winRb;
     public GameObject winScreen;
+    public ParticleSystem winParticle;
     private void Start()
     {
         winRb = GetComponent<Rigidbody2D>();
@@ -33,8 +35,8 @@ public class LevelScript : MonoBehaviour
                 PassLevel();
                 WinScreen();
                 Destroy(collision.gameObject);
-
-        }
+                winParticle.Play();
+            }
             if (collision.gameObject.CompareTag("tPlayer"))
             {
                 SceneManager.LoadScene(2);
@@ -44,6 +46,11 @@ public class LevelScript : MonoBehaviour
     // Do zmiany przy finale!!! 
     public void WinScreen()
     {
+        StartCoroutine(WinScreenRoutine());
+    }
+    IEnumerator WinScreenRoutine()
+    {
+        yield return new WaitForSeconds(2);
         winScreen.gameObject.SetActive(true);
     }
     public void GoToNextLevel()

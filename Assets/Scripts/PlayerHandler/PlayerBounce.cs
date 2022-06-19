@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBounce : MonoBehaviour
 {
-    public bool IsWinScreen = false;
     private Rigidbody2D bounceRb;
     private int currentLevelmm;
     public TextMeshProUGUI bounceText;

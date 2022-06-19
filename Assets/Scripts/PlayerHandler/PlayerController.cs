@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,19 +13,27 @@ public class PlayerController : MonoBehaviour
     public GameObject ball;
     public Rigidbody2D rb;
     public LineRenderer lr;
-    private int currentLevel;
+    [SerializeField]private int currentLevel;
+    public TextMeshProUGUI levelText;
     Vector3 clampedForce;
     Vector3 dragStartPos;
     Touch touch;
-    [SerializeField] bool isMoving = false;
+    [SerializeField] bool isMoving = true;
 
     private void Start()
     {
+        StartCoroutine(WaitForMove());
         tBox.SetActive(false);
-        currentLevel = SceneManager.GetActiveScene().buildIndex;
+        levelText.text = "" + currentLevel;
+    }
+    IEnumerator WaitForMove()
+    {
+        yield return new WaitForSeconds(2);
+        isMoving = false;
     }
     private void Update()
     {
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
@@ -78,7 +87,7 @@ public class PlayerController : MonoBehaviour
         isMoving = true;
     }
     // Nazwaæ potem GoToMenu
-    public void ResetGame()
+    public void GoToMenu()
     {
         SceneManager.LoadScene(0);
     }
@@ -86,5 +95,4 @@ public class PlayerController : MonoBehaviour
     {
         SceneManager.LoadScene(currentLevel);
     }
-
 }
