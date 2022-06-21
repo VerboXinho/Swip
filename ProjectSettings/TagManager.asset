@@ -10,6 +10,7 @@ TagManager:
   - tPlayer
   - MainMenuBounds
   - WinScreen
+  - Obsctacle
   layers:
   - Default
   - TransparentFX

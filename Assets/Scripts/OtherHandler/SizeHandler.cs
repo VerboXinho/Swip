@@ -24,7 +24,7 @@ public class SizeHandler : MonoBehaviour
     }
 
     void Update()
-    {
+    { 
         float t = (Time.time - startTime) / duration;
         spriteRenderer.color = new Color(1f, 1f, 1f, Mathf.SmoothStep(minimum, maximum, t));
         if (winScreen.IsWinScreen)

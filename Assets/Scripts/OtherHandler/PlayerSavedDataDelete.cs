@@ -6,7 +6,7 @@ public class PlayerSavedDataDelete : MonoBehaviour
 
     public void Restart()
     {
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("levelUnlocked", 1);
     }
 
 }
