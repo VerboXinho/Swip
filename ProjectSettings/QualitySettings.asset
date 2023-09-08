@@ -27,6 +27,7 @@ QualitySettings:
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
     vSyncCount: 0
+    realtimeGICPUUsage: 25
     lodBias: 0.3
     maximumLODLevel: 0
     streamingMipmapsActive: 0
@@ -40,7 +41,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 2ff1e45987411e644b999be9829854e0, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Low
@@ -63,6 +64,7 @@ QualitySettings:
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
     vSyncCount: 0
+    realtimeGICPUUsage: 25
     lodBias: 0.4
     maximumLODLevel: 0
     streamingMipmapsActive: 0
@@ -76,7 +78,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 8b766c3630f807b4bbac34ba3ec9bae6, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Medium
@@ -98,7 +100,8 @@ QualitySettings:
     softVegetation: 0
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
-    vSyncCount: 1
+    vSyncCount: 0
+    realtimeGICPUUsage: 25
     lodBias: 0.7
     maximumLODLevel: 0
     streamingMipmapsActive: 0
@@ -112,7 +115,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 1b62cf18bd8effd449e667f64e0c8cc4, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: High
@@ -135,6 +138,7 @@ QualitySettings:
     realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
     vSyncCount: 1
+    realtimeGICPUUsage: 50
     lodBias: 1
     maximumLODLevel: 0
     streamingMipmapsActive: 0
@@ -148,7 +152,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 959a5e6a3813bfd4d9d7a417f10b326b, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Very High
@@ -171,6 +175,7 @@ QualitySettings:
     realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
     vSyncCount: 1
+    realtimeGICPUUsage: 50
     lodBias: 1.5
     maximumLODLevel: 0
     streamingMipmapsActive: 0
@@ -184,7 +189,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: f4f1ee68acbe8a44fb2f54307b568532, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Ultra
@@ -207,6 +212,7 @@ QualitySettings:
     realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
     vSyncCount: 1
+    realtimeGICPUUsage: 100
     lodBias: 2
     maximumLODLevel: 0
     streamingMipmapsActive: 0
@@ -220,7 +226,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
+    customRenderPipeline: {fileID: 11400000, guid: 195c2c3c30c6a8145913fccfe9b720d8, type: 2}
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
     Android: 2
@@ -231,6 +237,7 @@ QualitySettings:
     Nintendo Switch: 5
     PS4: 5
     PS5: 5
+    Server: 0
     Stadia: 5
     Standalone: 5
     WebGL: 3
