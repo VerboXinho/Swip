@@ -236,7 +236,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         RemapIntensityZero: 0
-        RemapIntensityOne: 4.5
+        RemapIntensityOne: 3.5
         ShakeThreshold:
           serializedVersion: 2
           m_Curve:

@@ -11,11 +11,11 @@ public class PlayerController : MonoBehaviour
     public GameObject tBox;
     public float power = 10f;
     public float maxDrag = 5f;
+    public bool isPause;
     public GameObject ball;
     public Rigidbody2D rb;
     public LineRenderer lr;
     [SerializeField]private int currentLevel;
-    public Text levelText;
     Vector3 clampedForce;
     Vector3 dragStartPos;
     Touch touch;
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         StartCoroutine(WaitForMove());
-        levelText.text = "" + currentLevel;
+        isPause = false;
     }
     IEnumerator WaitForMove()
     {
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         {
             touch = Input.GetTouch(0);
 
-            if (!isMoving)
+            if (!isMoving || isPause)
             {
                 if (touch.phase == TouchPhase.Began)
                 {
@@ -95,5 +95,12 @@ public class PlayerController : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(currentLevel);
+    }
+
+    public IEnumerator PauseCooldown()
+    {
+        yield return new WaitForSeconds(0.1f);
+        isPause = false;
+        isMoving = false;
     }
 }

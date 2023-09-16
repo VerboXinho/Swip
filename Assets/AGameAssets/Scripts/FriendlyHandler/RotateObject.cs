@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class RotateObject : MonoBehaviour
@@ -11,7 +12,7 @@ public class RotateObject : MonoBehaviour
     [SerializeField]int rotationAngle;
     private int rotationCount;
     float time;
-    bool isRotated = false;
+   [SerializeField] bool isRotated = false;
 
     public void Start()
     {
@@ -30,7 +31,7 @@ public class RotateObject : MonoBehaviour
         }
         if(time > 1.9f  && !isRotated)
         {
-            time = 0;
+             time = 0;
             rotationAngle++;
             isRotated = true;
         }
@@ -39,5 +40,4 @@ public class RotateObject : MonoBehaviour
             rotationAngle = 0;
         }
     }
-        
-}
+}      

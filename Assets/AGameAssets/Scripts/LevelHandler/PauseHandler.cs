@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PauseHandler : MonoBehaviour
 {
-    public GameObject pausePanel;
+    GameObject pausePanel;
+    PlayerController playerMain;
+    void Start()
+    {
+        playerMain = GameObject.Find("MainPlayer").GetComponent<PlayerController>();
+        pausePanel = GameObject.Find("PausePanel");
+        pausePanel.gameObject.SetActive(false);
+    }
     public void Pause()
     {
+        playerMain.isPause = true;
         pausePanel.gameObject.SetActive(true);
         Time.timeScale = 0;
-    }
-    public void UnPause()
-    {
-        pausePanel.gameObject.SetActive(false);
-        Time.timeScale = 1;
     }
 }

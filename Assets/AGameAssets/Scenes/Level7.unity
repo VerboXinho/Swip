@@ -362,6 +362,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae2ce1a4dcecd7143924f1d3cf8976ef, type: 3}
+--- !u!1 &290693044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2980453836378976513, guid: ae2ce1a4dcecd7143924f1d3cf8976ef, type: 3}
+  m_PrefabInstance: {fileID: 290693043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &290693045
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290693044}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &352276157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,17 +1411,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1790951297144699546, guid: 805ae9c7159dd1a4dbebf7e6fc941e1b, type: 3}
   m_PrefabInstance: {fileID: 1165273414}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1165273416 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1790951297144699547, guid: 805ae9c7159dd1a4dbebf7e6fc941e1b, type: 3}
-  m_PrefabInstance: {fileID: 1165273414}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!198 &1173822211 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 1521628379825516732, guid: b0dac90ab9156294da3a91e801b68e63, type: 3}
@@ -2107,11 +2127,11 @@ MonoBehaviour:
   tBox: {fileID: 230702861}
   power: 3
   maxDrag: 3
+  isPause: 0
   ball: {fileID: 2062746536}
   rb: {fileID: 2062746539}
   lr: {fileID: 2062746542}
   currentLevel: 0
-  levelText: {fileID: 1165273416}
   isMoving: 1
 --- !u!120 &2062746542
 LineRenderer:
