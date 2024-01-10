@@ -4,18 +4,28 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using MoreMountains.Feedbacks;
+using JetBrains.Annotations;
 
 public class LevelScript : MonoBehaviour
 {
+    public static LevelScript instance;
     public bool IsWinScreen = false;
     private int currentLevel;
     private Rigidbody2D winRb;
     public GameObject winScreen;
+    GameObject pauseButton, resetButton;
     public ParticleSystem winParticle;
     MMFeedbacks winFeedback;
 
+    void Awake()
+    {
+        instance = this;
+    }
+
     private void Start() 
     {
+        pauseButton= GameObject.Find("Pause");
+        resetButton = GameObject.Find("ResetButton");
          winRb = GetComponent<Rigidbody2D>();
          winFeedback = GameObject.Find("WinFeedBack").GetComponent<MMF_Player>();
     }
@@ -43,6 +53,8 @@ public class LevelScript : MonoBehaviour
                 PassLevel();
                 WinScreen();
                 winParticle.Play();
+                pauseButton.gameObject.SetActive(false);
+                resetButton.gameObject.SetActive(false);
             }
             if (collision.gameObject.CompareTag("tPlayer"))
             {
@@ -58,5 +70,6 @@ public class LevelScript : MonoBehaviour
         winScreen.gameObject.SetActive(true);
     }
     public void GoToNextLevel() => SceneManager.LoadScene(currentLevel + 1);
+    public void GoToMenu() => SceneManager.LoadScene(0);
     
 }

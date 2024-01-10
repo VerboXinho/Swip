@@ -28,13 +28,14 @@ public class LevelManager : MonoBehaviour
     {
         startTime = Time.time;
         levelUnlocked = PlayerPrefs.GetInt("levelUnlocked", 1);
+        Debug.Log(levelUnlocked);
         for(int i = 0; i < levelButtons.Length; i++)
         {
             levelButtons[i].interactable = false;
         }
-        for (int i = 0; i < levelUnlocked; i++)
+        for (int i = 0; i < levelUnlocked; i++) //Add <= when level 45 is fixed
         {
-            levelButtons[i].interactable = true;
+                levelButtons[i].interactable = true;
         }
     }
     private void Update()
@@ -75,6 +76,13 @@ public class LevelManager : MonoBehaviour
     IEnumerator LoadLevelRoutine()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(levelUnlocked);
+        if(levelUnlocked == 46)
+        {
+            SceneManager.LoadScene(45);
+        }
+        else
+        {
+            SceneManager.LoadScene(levelUnlocked);
+        }
     }
 }

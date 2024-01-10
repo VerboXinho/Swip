@@ -592,7 +592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7823871799812788303, guid: 4cd0780f632872545a4977f1bf3a0ed8, type: 3}
       propertyPath: m_Name
-      value: RestartLevel Button 1
+      value: ResetButton
       objectReference: {fileID: 0}
     - target: {fileID: 8731052708793386753, guid: 4cd0780f632872545a4977f1bf3a0ed8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

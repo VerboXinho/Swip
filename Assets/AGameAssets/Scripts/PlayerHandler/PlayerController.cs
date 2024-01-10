@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         {
             touch = Input.GetTouch(0);
 
-            if (!isMoving || isPause)
+            if (!isMoving || !isPause)
             {
                 if (touch.phase == TouchPhase.Began)
                 {

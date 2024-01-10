@@ -1581,11 +1581,11 @@ MonoBehaviour:
   tBox: {fileID: 3694314526467623232}
   power: 3
   maxDrag: 3
+  isPause: 0
   ball: {fileID: 2062746536}
   rb: {fileID: 2062746539}
   lr: {fileID: 2062746542}
   currentLevel: 0
-  levelText: {fileID: 1790951296111795443}
   isMoving: 1
 --- !u!120 &2062746542
 LineRenderer:
@@ -1926,17 +1926,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 805ae9c7159dd1a4dbebf7e6fc941e1b, type: 3}
---- !u!114 &1790951296111795443 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1790951297144699547, guid: 805ae9c7159dd1a4dbebf7e6fc941e1b, type: 3}
-  m_PrefabInstance: {fileID: 1790951296111795442}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3694314526467623231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2137,7 +2126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7823871799812788303, guid: 4cd0780f632872545a4977f1bf3a0ed8, type: 3}
       propertyPath: m_Name
-      value: RestartLevel Button
+      value: ResetButton
       objectReference: {fileID: 0}
     - target: {fileID: 8731052708793386753, guid: 4cd0780f632872545a4977f1bf3a0ed8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

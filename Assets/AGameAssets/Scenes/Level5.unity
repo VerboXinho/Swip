@@ -1749,7 +1749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7823871799812788303, guid: 4cd0780f632872545a4977f1bf3a0ed8, type: 3}
       propertyPath: m_Name
-      value: RestartLevel Button 1
+      value: ResetButton
       objectReference: {fileID: 0}
     - target: {fileID: 8731052708793386753, guid: 4cd0780f632872545a4977f1bf3a0ed8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1864,7 +1864,7 @@ PrefabInstance:
     - target: {fileID: 7146441316861811553, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1844377373}
     - target: {fileID: 7146441316861811553, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Resume
@@ -1876,6 +1876,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7146441316784812589, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
   m_PrefabInstance: {fileID: 1844377371}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1844377373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6571423697474211026, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
+  m_PrefabInstance: {fileID: 1844377371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02180eae0115ff48ae025c8b6bd7f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1951501168 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2483070853244836745, guid: f98bf377818738a429ef82e3e7928e2f, type: 3}
@@ -1893,15 +1904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7df79d128843c49bb00ec7a00d12ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpSpeed: 1
-  rotationAngles:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 45}
-  - {x: 0, y: 0, z: 90}
-  - {x: 0, y: 0, z: 135}
-  - {x: 0, y: 0, z: 180}
-  rotationAngle: 0
-  isRotated: 0
+  rotationTime: 10
+  pauseTime: 15
 --- !u!1 &2062746536
 GameObject:
   m_ObjectHideFlags: 0

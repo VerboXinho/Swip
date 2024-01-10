@@ -1,43 +1,42 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 
 public class RotateObject : MonoBehaviour
 {
-    public float lerpSpeed;
-    private float timePassed;
-    public Vector3[] rotationAngles;
-    [SerializeField]int rotationAngle;
-    private int rotationCount;
-    float time;
-   [SerializeField] bool isRotated = false;
+    Quaternion targetRotation;
+    float rotationSpeed = 45f;
+    [SerializeField]float rotationTime;
+    [SerializeField]float pauseTime;
+    float lastRotationTime;
+
 
     public void Start()
     {
-        rotationCount = rotationAngles.Length;
+        //Get target rotation, by Z axis rotate 45 degress
+        targetRotation = transform.rotation * Quaternion.Euler(0,0,45);
     }
     void Update()
     {
-        //Rotate Logic 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(rotationAngles[rotationAngle]), Time.deltaTime * lerpSpeed);
-        time = Mathf.Lerp(time, 2f, Time.deltaTime * lerpSpeed);
-        if(time > 1.9f && isRotated)
+        if(lastRotationTime < pauseTime)
         {
-            time = 0;
-            rotationAngle++;
-            isRotated = false;
+            lastRotationTime += Time.deltaTime;
         }
-        if(time > 1.9f  && !isRotated)
+        else
         {
-             time = 0;
-            rotationAngle++;
-            isRotated = true;
-        }
-        if(rotationAngle > 4)
-        {
-            rotationAngle = 0;
+            transform.rotation = Quaternion.Lerp(transform.rotation,targetRotation, rotationSpeed * Time.deltaTime/rotationTime);
+
+            //Snap to the angle
+            if (Quaternion.Angle(transform.rotation, targetRotation) < 1.0f)
+            {
+                transform.rotation = targetRotation;
+                // Update target rotation for the next rotation
+                targetRotation *= Quaternion.Euler(0, 0, 45);
+                lastRotationTime = 0f;
+            }
         }
     }
 }      

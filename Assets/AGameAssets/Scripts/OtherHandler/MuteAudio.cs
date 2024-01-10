@@ -9,5 +9,6 @@ public class MuteAudio : MonoBehaviour
     {
         if (mute) AudioListener.volume = 0;
         else AudioListener.volume = 1;
+        Debug.Log(mute);
     }
 }

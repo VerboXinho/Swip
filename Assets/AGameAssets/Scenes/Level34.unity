@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7823871799812788303, guid: 4cd0780f632872545a4977f1bf3a0ed8, type: 3}
       propertyPath: m_Name
-      value: RestartLevel Button 1
+      value: ResetButton
       objectReference: {fileID: 0}
     - target: {fileID: 8731052708793386753, guid: 4cd0780f632872545a4977f1bf3a0ed8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -667,7 +667,7 @@ RectTransform:
   - {fileID: 1165273415}
   - {fileID: 145787440}
   - {fileID: 234791366}
-  - {fileID: 1567352586}
+  - {fileID: 1544581992}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2115,7 +2115,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 5761828611101715231, guid: 24aee73b32d02ba41b3ba917a07649dd, type: 3}
   m_PrefabInstance: {fileID: 1515214312}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1567352585
+--- !u!1001 &1544581991
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2161,6 +2161,18 @@ PrefabInstance:
     - target: {fileID: 7146441316784812589, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146441316784812589, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146441316784812589, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146441316784812589, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7146441316784812589, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2212,10 +2224,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
---- !u!224 &1567352586 stripped
+--- !u!224 &1544581992 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7146441316784812589, guid: 7eb3b741afd26f040acbee97cf237d29, type: 3}
-  m_PrefabInstance: {fileID: 1567352585}
+  m_PrefabInstance: {fileID: 1544581991}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1717345872 stripped
 Transform:

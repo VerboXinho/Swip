@@ -14,8 +14,11 @@ public class PauseHandler : MonoBehaviour
     }
     public void Pause()
     {
-        playerMain.isPause = true;
-        pausePanel.gameObject.SetActive(true);
-        Time.timeScale = 0;
+        if(!LevelScript.instance.IsWinScreen)
+        {
+            playerMain.isPause = true;
+            pausePanel.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }
